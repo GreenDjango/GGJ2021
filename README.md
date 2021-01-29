@@ -1,4 +1,4 @@
-# <img src="assets/icon.png" alt="GGJ icon" width="50" style="margin-bottom: -3px;"/> GGJ 2021
+# <img src="assets/icon.png" alt="GGJ icon" width="64" style="margin-bottom: -3px;"/> GGJ 2021
 
 [![release][1]][2] [![license][7]][8]
 
