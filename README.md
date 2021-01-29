@@ -15,7 +15,7 @@ GGJ2021 is a **game** for 💻**PC** / 🌐**Web** /📱**Android**.
 
 ---
 
-<img src="app/assets/splashscreen.png" alt="GGJ icon" width="200" align="center"/>
+<img src="assets/splashscreen.png" alt="GGJ icon" width="200" align="center"/>
 
 [1]: https://img.shields.io/badge/release-v0.1.0-blue
 [2]: https://github.com/GreenDjango/GGJ2021/releases 'GitHub release (latest by date)'
