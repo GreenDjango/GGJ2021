@@ -20,6 +20,19 @@ run/main_scene="res://src/scenes/main_menu.tscn"
 boot_splash/image="res://assets/splashscreen.png"
 config/icon="res://assets/icon.png"
 
+[autoload]
+
+Globals="*res://src/scripts/globals.gd"
+
+[display]
+
+window/size/width=320
+window/size/height=224
+window/size/test_width=1024
+window/size/test_height=600
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 left={
@@ -50,6 +63,7 @@ up={
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/2d/use_pixel_snap=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"
