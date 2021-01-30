@@ -142,13 +142,13 @@ radius = 5.69177
 height = 8.08806
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-position = Vector2( 196.544, 113.137 )
+position = Vector2( 4.06709, -1.12677 )
 scale = Vector2( 4, 4 )
 script = ExtResource( 2 )
 sprite_path = NodePath("AnimatedSprite")
-particle_path = NodePath("CPUParticles2D")
+particle_path = NodePath("deathParticles")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="deathParticles" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 30
 lifetime = 1.5
