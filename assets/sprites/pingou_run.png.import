@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pingou_death.png-8ab4f030e52597cc89715bcbe41c881c.stex"
+path="res://.import/pingou_run.png-f03ce93f86914b58bd1cc16ce1b7cc5c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pingou_death.png"
-dest_files=[ "res://.import/pingou_death.png-8ab4f030e52597cc89715bcbe41c881c.stex" ]
+source_file="res://assets/sprites/pingou_run.png"
+dest_files=[ "res://.import/pingou_run.png-f03ce93f86914b58bd1cc16ce1b7cc5c.stex" ]
 
 [params]
 

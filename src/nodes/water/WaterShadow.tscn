@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/nodes/water/water_with_shadow_material.tres" type="Material" id=1]
+[ext_resource path="res://assets/textures/water/water.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/water/water_normal.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/water/light.png" type="Texture" id=5]
+
+[node name="WaterWithShadow" type="Sprite"]
+material = ExtResource( 1 )
+position = Vector2( 32, 32 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+normal_map = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 5 )
+energy = 0.3
+range_height = 100.0
+range_z_min = 0
+[connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]

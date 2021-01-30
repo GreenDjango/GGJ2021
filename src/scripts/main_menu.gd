@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	$AnimationPlayer.play("pingu_fly")
+	pass
 
 func _input(event):
 	if event is InputEventKey:

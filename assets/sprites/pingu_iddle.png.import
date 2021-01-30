@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pingu_victory.png-cab03422c9f453e06b190f01610d3309.stex"
+path="res://.import/pingu_iddle.png-a0134b163178d2ee0b30f739c90e3e5c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pingu_victory.png"
-dest_files=[ "res://.import/pingu_victory.png-cab03422c9f453e06b190f01610d3309.stex" ]
+source_file="res://assets/sprites/pingu_iddle.png"
+dest_files=[ "res://.import/pingu_iddle.png-a0134b163178d2ee0b30f739c90e3e5c.stex" ]
 
 [params]
 
