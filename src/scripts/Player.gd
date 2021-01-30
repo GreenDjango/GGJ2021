@@ -9,7 +9,7 @@ export(NodePath) var sprite_path
 var player_sprite: AnimatedSprite = null
 
 func _ready():
-	player_sprite = get_node(sprite_path)
+	player_sprite = get_node("AnimatedSprite")
 	set_as_toplevel(true)
 
 func _physics_process(delta : float):
