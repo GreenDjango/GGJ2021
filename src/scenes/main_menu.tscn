@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/font/ice_pixel-7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/scenes/main_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/pingou_death-Sheet.png" type="Texture" id=3]
 
-[sub_resource type="DynamicFont" id=1]
-size = 40
-font_data = ExtResource( 1 )
+[sub_resource type="Curve2D" id=8]
+_data = {
+"points": PoolVector2Array( -38.6812, 19.3406, 38.6812, -19.3406, 87.8534, 216.581, -42.0163, -1.38227, 42.0163, 1.38227, 116.459, 151.424, -24.1867, 23.6431, 24.1867, -23.6431, 239.914, 197.468, 113.042, 60.2002, -113.042, -60.2002, 251.282, 122.737, 36.9994, 27.3291, -36.9994, -27.3291, 287.161, 42.4982, 47.9311, -10.5112, -47.9311, 10.5112, 137.86, 8.4803, 9.67031, -45.4084, -9.67031, 45.4084, 93.1328, 76.516, 37.8403, -7.98852, -37.8403, 7.98852, 20.6873, 48.7978, 8.40896, -30.6927, -8.40896, 30.6927, 18.7284, 103.664, 37.485, -53.749, -37.485, 53.749, 23.8371, 172.27, 0, 0, 0, 0, 42.7359, 202.508, -26.9004, 0, 26.9004, 0, 87.8534, 216.581 )
+}
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
@@ -32,8 +33,26 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=2]
-resource_name = "fly"
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "pingu_fly"
+length = 30.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.8, 17.1, 30 ),
+"transitions": PoolRealArray( 1, 0.707105, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.26, 0.57, 1.0 ]
+}
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -52,6 +71,32 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Path2D" type="Path2D" parent="Control"]
+position = Vector2( -160, -112 )
+curve = SubResource( 8 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Control/Path2D"]
+position = Vector2( 34.8174, 49.7394 )
+offset = 847.073
+rotate = false
+
+[node name="Pingu" type="AnimatedSprite" parent="Control/Path2D/PathFollow2D"]
+position = Vector2( 0, -20 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 7 )
+animation = "fly"
+frame = 2
+playing = true
 
 [node name="Title" type="Label" parent="."]
 anchor_right = 1.0
@@ -84,14 +129,5 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 267.226, 168.213 )
-scale = Vector2( 2, 2 )
-frames = SubResource( 7 )
-animation = "fly"
-frame = 2
-playing = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../AnimatedSprite")
-anims/fly = SubResource( 2 )
+anims/pingu_fly = SubResource( 9 )
