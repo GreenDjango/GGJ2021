@@ -6,16 +6,19 @@ var acceleration := 0.0
 const acceleration_step := 0.005
 const friction := 0.7
 export(NodePath) var sprite_path
+export(NodePath) var particle_path
 var player_sprite: AnimatedSprite = null
+var particles: CPUParticles2D = null
 
 func _ready():
 	player_sprite = get_node(sprite_path)
+	particles = get_node(particle_path)
 	set_as_toplevel(true)
 
 func _physics_process(delta : float):
 	if Input.is_key_pressed(KEY_E):
-		killPlayer()
-		#victory()
+		#killPlayer()
+		victory()
 		return
 	var input := Vector2.ZERO
 	if Input.is_action_pressed("right"):
@@ -64,5 +67,6 @@ func _on_animation_finished():
 		player_sprite.frame = player_sprite.frames.get_frame_count("victory")
 	if player_sprite.animation == "death":
 		player_sprite.stop()
+		particles.emitting = true
 		player_sprite.visible = false
 	pass
