@@ -1,10 +1,10 @@
 extends Control
 
 func _ready():
-	pass
+	$AnimationPlayer.play("pingu_fly")
 
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
-			print("START")
-			# Globals.goto_scene("game")
+			Globals.goto_scene("game")
+
