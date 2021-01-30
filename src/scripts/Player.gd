@@ -4,15 +4,19 @@ var velocity := Vector2.ZERO
 const speed_max := 200.0
 var acceleration := 0.0
 const acceleration_step := 0.005
-const friction := 0.5
+const friction := 0.7
 export(NodePath) var sprite_path
 var player_sprite: AnimatedSprite = null
 
 func _ready():
-	player_sprite = get_node("AnimatedSprite")
+	player_sprite = get_node(sprite_path)
 	set_as_toplevel(true)
 
 func _physics_process(delta : float):
+	if Input.is_key_pressed(KEY_E):
+		killPlayer()
+		#victory()
+		return
 	var input := Vector2.ZERO
 	if Input.is_action_pressed("right"):
 		input.x += 1
@@ -38,8 +42,27 @@ func _physics_process(delta : float):
 		velocity = velocity.move_toward(Vector2.ZERO, friction)
 		player_sprite.play("idle")
 #		velocity = velocity.move_toward(Vector2.ZERO, friction * delta) # No need delta
-
 	move_and_slide(velocity)
 	#var collide = move_and_collide(velocity, true, true, true)
 	#if collide:
 	#	print(collide.collider_id)
+
+func killPlayer():
+	set_physics_process(false)
+	player_sprite.stop()
+	player_sprite.play("death")
+
+func victory():
+	set_physics_process(false)
+	player_sprite.stop()
+	player_sprite.play("victory")
+
+
+func _on_animation_finished():
+	if player_sprite.animation == "victory":
+		player_sprite.stop()
+		player_sprite.frame = player_sprite.frames.get_frame_count("victory")
+	if player_sprite.animation == "death":
+		player_sprite.stop()
+		player_sprite.visible = false
+	pass
