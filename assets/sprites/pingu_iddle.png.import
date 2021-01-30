@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/splashscreen.png-4d64d94ac20a34e94080da68d59c9d2d.stex"
+path="res://.import/pingu_iddle.png-a0134b163178d2ee0b30f739c90e3e5c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/splashscreen.png"
-dest_files=[ "res://.import/splashscreen.png-4d64d94ac20a34e94080da68d59c9d2d.stex" ]
+source_file="res://assets/sprites/pingu_iddle.png"
+dest_files=[ "res://.import/pingu_iddle.png-a0134b163178d2ee0b30f739c90e3e5c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

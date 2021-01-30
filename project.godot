@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="GGJ2021"
 run/main_scene="res://src/scenes/main_menu.tscn"
-boot_splash/image="res://assets/splashscreen.png"
+boot_splash/image="res://assets/sprites/splashscreen.png"
 config/icon="res://assets/icon.png"
 
 [autoload]
@@ -59,6 +59,10 @@ up={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[physics]
+
+2d/default_gravity_vector=Vector2( 0, 0 )
 
 [rendering]
 

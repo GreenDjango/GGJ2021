@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
 var velocity := Vector2.ZERO
-const speed_max := 200.0
-var acceleration := 0.0
-const acceleration_step := 0.005
-const friction := 0.7
+const speed_max := 70.0
+var acceleration := 0.1
+const acceleration_step := 0.02
+const friction := 0.9
 export(NodePath) var sprite_path
 export(NodePath) var particle_path
 var player_sprite: AnimatedSprite = null
@@ -13,9 +13,8 @@ var particles: CPUParticles2D = null
 func _ready():
 	player_sprite = get_node(sprite_path)
 	particles = get_node(particle_path)
-	set_as_toplevel(true)
 
-func _physics_process(delta : float):
+func _physics_process(_delta : float):
 	if Input.is_key_pressed(KEY_E):
 		#killPlayer()
 		victory()
@@ -29,22 +28,32 @@ func _physics_process(delta : float):
 		input.y += 1
 	if Input.is_action_pressed("up"):
 		input.y -= 1
-	input = input.normalized()
+	_move_player(input.normalized())
+
+func _move_player(input: Vector2):
 	if input != Vector2.ZERO:
 		if acceleration < 1:
 			acceleration += acceleration_step
-		velocity = input * speed_max * acceleration
-#		velocity = input * delta * acceleration # No need delta
 		player_sprite.play("run")
+	else:
+		if acceleration > 0.1:
+			acceleration -= acceleration_step*2
+		player_sprite.play("idle")
+
+	if input.x != 0:
+		velocity.x = input.x * speed_max * acceleration
 		if velocity.x > 0:
 			player_sprite.flip_h = false
 		elif velocity.x < 0:
 			player_sprite.flip_h = true
 	else:
-		acceleration = 0
-		velocity = velocity.move_toward(Vector2.ZERO, friction)
-		player_sprite.play("idle")
-#		velocity = velocity.move_toward(Vector2.ZERO, friction * delta) # No need delta
+		velocity.x = move_toward(velocity.x, 0, friction)
+
+	if input.y != 0:
+		velocity.y = input.y * speed_max * acceleration
+	else:
+		velocity.y = move_toward(velocity.y, 0, friction)
+
 	move_and_slide(velocity)
 	#var collide = move_and_collide(velocity, true, true, true)
 	#if collide:

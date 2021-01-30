@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pingou_run.png-e08a8c2a111c69b77725d53abbcdb7bb.stex"
+path="res://.import/pingou_run.png-f03ce93f86914b58bd1cc16ce1b7cc5c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pingou_run.png"
-dest_files=[ "res://.import/pingou_run.png-e08a8c2a111c69b77725d53abbcdb7bb.stex" ]
+source_file="res://assets/sprites/pingou_run.png"
+dest_files=[ "res://.import/pingou_run.png-f03ce93f86914b58bd1cc16ce1b7cc5c.stex" ]
 
 [params]
 
