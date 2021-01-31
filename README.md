@@ -1,17 +1,18 @@
-# <img src="assets/icon.png" alt="GGJ icon" width="64" style="margin-bottom: -3px;"/> GGJ 2021
+# <img src="assets/icon.png" alt="GGJ icon" width="64" style="margin-bottom: -3px;"/> Poungi
 
 [![release][1]][2] [![license][7]][8]
 
-GGJ2021 is a **game** for 💻**PC** / 🌐**Web** /📱**Android**.
+Poungi is a **GGJ game** for 💻**PC** / 🌐**Web**.
+[Global game jam 2021](https://globalgamejam.org/) theme is `Lost & Found`
 
 <!--- ![alt text](demo.gif 'Demo bonus') --->
 
 ## Install & Setup
 
-1. Download the 💻*binary* or 📱*apk* from **[releases](https://github.com/GreenDjango/GGJ2021/releases)**
+1. Download the 💻*binary* from **[releases](https://github.com/GreenDjango/GGJ2021/releases)**
 2. Run the app
-5. Enjoy with `???` !
-6. Optional: `rm -rf *` for delete all your pc
+3. Enjoy with `Poungi` !
+4. Optional: `rm -rf *` for delete all your pc
 
 ---
 
