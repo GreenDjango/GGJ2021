@@ -16,14 +16,6 @@ func _switch_blizzard(active: bool):
 func _is_player(body : Node ) -> bool: 
 	return body is KinematicBody2D && body.is_in_group("player")
 
-func _on_StartArea_body_entered(body):
-	if _is_player(body):
-		Globals.dialog = "You need to find your egg!"
-
-func _on_StartArea_body_exited(body):
-	if _is_player(body):
-		Globals.dialog = ""
-
 func _on_BlizzardArea_body_entered(body):
 	if _is_player(body):
 		_switch_blizzard(true)

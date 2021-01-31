@@ -8,20 +8,18 @@
 [ext_resource path="res://src/nodes/inuit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/nodes/nest.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/scripts/game.gd" type="Script" id=8]
-[ext_resource path="res://src/nodes/orca.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sounds/pingu.ogg" type="AudioStream" id=9]
+[ext_resource path="res://src/nodes/orca.tscn" type="PackedScene" id=10]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 152, 120 )
-
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 536.0
 height = 704.0
 
-[sub_resource type="SphereMesh" id=2]
+[sub_resource type="SphereMesh" id=3]
 radius = 4.688
 height = 10.939
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 5.19798
 height = 2.07841
 
@@ -64,16 +62,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="StartArea" type="Area2D" parent="Zones"]
-position = Vector2( 160, 88 )
-gravity_vec = Vector2( 0, 0 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/StartArea"]
-shape = SubResource( 1 )
-
 [node name="BlizzardArea" type="Area2D" parent="Zones"]
 position = Vector2( 1736, 1104 )
 gravity_vec = Vector2( 0, 0 )
@@ -83,10 +71,13 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/BlizzardArea"]
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Nest" parent="." instance=ExtResource( 7 )]
 position = Vector2( 64, 112 )
+
+[node name="Orca" parent="." instance=ExtResource( 10 )]
+position = Vector2( 568, 320 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 160, 112 )
@@ -140,11 +131,11 @@ __meta__ = {
 }
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Egg"]
-mesh = SubResource( 2 )
+mesh = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Egg"]
 position = Vector2( 0, 0.157669 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Enemies" type="Node2D" parent="."]
 __meta__ = {
@@ -178,7 +169,5 @@ anims/blizzard = SubResource( 5 )
 stream = ExtResource( 9 )
 volume_db = -3.0
 autoplay = true
-[connection signal="body_entered" from="Zones/StartArea" to="." method="_on_StartArea_body_entered"]
-[connection signal="body_exited" from="Zones/StartArea" to="." method="_on_StartArea_body_exited"]
 [connection signal="body_entered" from="Zones/BlizzardArea" to="." method="_on_BlizzardArea_body_entered"]
 [connection signal="body_exited" from="Zones/BlizzardArea" to="." method="_on_BlizzardArea_body_exited"]
