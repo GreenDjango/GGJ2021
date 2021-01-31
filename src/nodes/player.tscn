@@ -183,7 +183,6 @@ radius = 5.69177
 height = 8.08806
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-position = Vector2( 190, 113 )
 script = ExtResource( 2 )
 sprite_path = NodePath("AnimatedSprite")
 particle_path = NodePath("deathParticles")

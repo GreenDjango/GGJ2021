@@ -1,39 +1,44 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprites/heart.png" type="Texture" id=1]
+[ext_resource path="res://src/scripts/game_ui.gd" type="Script" id=2]
+
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = 7.04409
-margin_top = 5.95275
-margin_right = 15.0441
-margin_bottom = 13.9528
-color = Color( 1, 0, 0, 1 )
+[node name="Heart1" type="TextureRect" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 16.0
+margin_bottom = 16.0
+texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect3" type="ColorRect" parent="."]
-margin_left = 22.6205
-margin_top = 6.15118
-margin_right = 30.6205
-margin_bottom = 14.1512
-color = Color( 1, 0, 0, 1 )
+[node name="Heart2" type="TextureRect" parent="."]
+margin_left = 24.0
+margin_top = 8.0
+margin_right = 32.0
+margin_bottom = 16.0
+texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect4" type="ColorRect" parent="."]
-margin_left = 39.7842
-margin_top = 5.85354
-margin_right = 47.7842
-margin_bottom = 13.8535
-color = Color( 1, 0, 0, 1 )
+[node name="Heart3" type="TextureRect" parent="."]
+margin_left = 40.0
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 16.0
+texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -54,21 +54,27 @@ func _move_player(input: Vector2):
 	else:
 		velocity.y = move_toward(velocity.y, 0, friction)
 
+	# warning-ignore:return_value_discarded
 	move_and_slide(velocity)
 	#var collide = move_and_collide(velocity, true, true, true)
 	#if collide:
 	#	print(collide.collider_id)
 
+func hurt(degat: float):
+	if Globals.life <= 0:
+		return
+	Globals.life -= degat
+	if Globals.life <= 0:
+		Globals.life = 0
+		killPlayer()
+
 func killPlayer():
 	set_physics_process(false)
-	player_sprite.stop()
 	player_sprite.play("death")
 
 func victory():
 	set_physics_process(false)
-	player_sprite.stop()
 	player_sprite.play("victory")
-
 
 func _on_animation_finished():
 	if player_sprite.animation == "victory":
@@ -78,4 +84,3 @@ func _on_animation_finished():
 		player_sprite.stop()
 		particles.emitting = true
 		player_sprite.visible = false
-	pass
