@@ -2,7 +2,7 @@ extends StaticBody2D
 
 var orca_sprite: AnimatedSprite
 
-var dialog1 := "You need to find your egg !"
+var dialog1 := "I saw your egg take away by the wind of the blizzard!\nBut be careful, some inuit are mad at us.\nBe safe on your journey."
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
