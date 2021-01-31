@@ -13,14 +13,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if !isPlayerEntered:
-		orca_sprite.play("hole")
 	if isPlayerEntered && Input.is_key_pressed(KEY_E):
 		orca_sprite.play("orca_talking")
-		#launchDialog()
+		launchDialog()
 
 func launchDialog():
-	pass
+	Globals.dialog = "Hello fils de pute !"
+
+func removeDialog():
+	Globals.dialog = ""
 
 func _on_TalkingZone_body_entered(body: Node):
 	if body is KinematicBody2D && !body.is_in_group("enemies"):
@@ -31,7 +32,10 @@ func _on_TalkingZone_body_entered(body: Node):
 func _on_TalkingZone_body_exited(body):
 	if body is KinematicBody2D && !body.is_in_group("enemies"):
 		isPlayerEntered = false
-		orca_sprite.play("hole")
+		$AnimatedSprite/AnimationPlayer.animation_set_next("orca_leaving","hole")
+		$AnimatedSprite/AnimationPlayer.play("orca_leaving")
+		removeDialog()
+		
 
 func _on_AnimatedSprite_animation_finished():
 	if orca_sprite.animation == "orca_showing":
