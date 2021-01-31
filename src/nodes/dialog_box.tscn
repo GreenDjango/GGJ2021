@@ -19,7 +19,7 @@ corner_detail = 5
 anti_aliasing = false
 
 [sub_resource type="DynamicFont" id=2]
-size = 7
+size = 8
 font_data = ExtResource( 2 )
 
 [node name="DialogBox" type="Panel"]
