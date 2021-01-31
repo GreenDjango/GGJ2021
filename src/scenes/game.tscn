@@ -117,17 +117,11 @@ position = Vector2( 168, 320 )
 root_node = NodePath(".")
 autoplay = "blizzard"
 
-<<<<<<< HEAD
-[node name="Orca" parent="." instance=ExtResource( 9 )]
-position = Vector2( 193.187, 67.7161 )
-scale = Vector2( 1.2, 1.2 )
-=======
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=[
 "music",
 ]]
 stream = ExtResource( 9 )
 volume_db = -3.0
 autoplay = true
->>>>>>> 48490014d8b4a5969a7f76380ec37597669c3aa5
 [connection signal="body_entered" from="Zones/StartArea" to="." method="_on_StartArea_body_entered"]
 [connection signal="body_exited" from="Zones/StartArea" to="." method="_on_StartArea_body_exited"]
