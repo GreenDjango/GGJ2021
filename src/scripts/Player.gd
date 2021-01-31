@@ -5,14 +5,12 @@ const speed_max := 70.0
 var acceleration := 0.1
 const acceleration_step := 0.02
 const friction := 0.9
-export(NodePath) var sprite_path
-export(NodePath) var particle_path
 var player_sprite: AnimatedSprite = null
 var particles: CPUParticles2D = null
 
 func _ready():
-	player_sprite = get_node(sprite_path)
-	particles = get_node(particle_path)
+	player_sprite = $AnimatedSprite
+	particles = $DeathParticles
 
 func _physics_process(_delta : float):
 	if Input.is_key_pressed(KEY_E):

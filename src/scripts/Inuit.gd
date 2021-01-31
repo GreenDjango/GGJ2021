@@ -4,7 +4,7 @@ var speed := 40.0
 var targets := []
 
 func _ready():
-	pass
+	$AnimatedSprite.play("idle")
 
 func _physics_process(_delta : float):
 	if targets.empty():
