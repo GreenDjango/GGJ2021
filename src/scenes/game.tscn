@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/nodes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/game_ui.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/textures/blizzard.png" type="Texture" id=3]
-[ext_resource path="res://src/nodes/water/WaterShadow.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/map.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/shaders/snow.tres" type="Material" id=5]
 [ext_resource path="res://src/nodes/inuit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/nodes/nest.tscn" type="PackedScene" id=7]
@@ -16,11 +16,7 @@ height = 10.939
 radius = 5.19798
 height = 2.07841
 
-[sub_resource type="CapsuleShape2D" id=3]
-radius = 12.4994
-height = 168.313
-
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "blizzard"
 length = 10.0
 tracks/0/type = "value"
@@ -50,15 +46,14 @@ tracks/1/keys = {
 
 [node name="Node2D" type="Node2D"]
 
-[node name="WaterWithShadow" parent="." instance=ExtResource( 4 )]
-position = Vector2( 241.081, 137.251 )
+[node name="Map" parent="." instance=ExtResource( 4 )]
+position = Vector2( 168, 248 )
 
 [node name="Nest" parent="." instance=ExtResource( 7 )]
-position = Vector2( 68.7371, 205.614 )
+position = Vector2( 40, 104 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 90.5929, 145.44 )
-z_index = 1
+position = Vector2( 136, 104 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -0.722626, 4.0244 )
@@ -96,12 +91,35 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="ViewportContainer" type="ViewportContainer" parent="Player/Camera2D/CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -72.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = 72.0
+rect_pivot_offset = Vector2( 64, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="Player/Camera2D/CanvasLayer/ViewportContainer"]
+size = Vector2( 64, 64 )
+transparent_bg = true
+handle_input_locally = false
+disable_3d = true
+usage = 1
+render_target_update_mode = 3
+
+[node name="Node2D" parent="Player/Camera2D/CanvasLayer/ViewportContainer/Viewport" instance=ExtResource( 4 )]
+scale = Vector2( 0.1, 0.1 )
+
 [node name="UI" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 2 )]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." groups=[
 "egg",
 ]]
-position = Vector2( 82.112, 181.131 )
+position = Vector2( 96, 104 )
 linear_damp = 1.0
 __meta__ = {
 "_edit_group_": true
@@ -120,21 +138,12 @@ __meta__ = {
 }
 
 [node name="Inuit1" parent="Enemies" instance=ExtResource( 6 )]
-position = Vector2( 232.157, 46.4315 )
+position = Vector2( 192, 272 )
 
 [node name="Inuit2" parent="Enemies" instance=ExtResource( 6 )]
-position = Vector2( 310.595, 210.488 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 28.0758, 122.368 )
-shape = SubResource( 3 )
+position = Vector2( 272, 248 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath(".")
 autoplay = "blizzard"
-anims/blizzard = SubResource( 4 )
+anims/blizzard = SubResource( 3 )
