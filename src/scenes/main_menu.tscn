@@ -33,7 +33,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=7]
 size = 58
 font_data = ExtResource( 1 )
 
@@ -96,14 +96,14 @@ position = Vector2( 0, -20 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
 animation = "fly"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Title" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 0.54
 margin_bottom = 0.0399933
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "HELLO WORLD"
 align = 1

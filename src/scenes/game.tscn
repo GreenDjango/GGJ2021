@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/nodes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/game_ui.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/textures/blizzard.png" type="Texture" id=3]
 [ext_resource path="res://src/nodes/water/WaterShadow.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/shaders/snow.tres" type="Material" id=5]
+[ext_resource path="res://src/nodes/inuit.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SphereMesh" id=1]
 radius = 4.688
@@ -51,19 +52,8 @@ tracks/1/keys = {
 [node name="WaterWithShadow" parent="." instance=ExtResource( 4 )]
 position = Vector2( 241.081, 137.251 )
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2( 98.862, 120.631 )
-linear_damp = 1.0
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D"]
-mesh = SubResource( 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2( 0, 0.157669 )
-shape = SubResource( 2 )
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 159.285, 107.381 )
+position = Vector2( 90.5929, 145.44 )
 sprite_path = NodePath("../Player/AnimatedSprite")
 particle_path = NodePath("../Player/CPUParticles2D")
 
@@ -71,10 +61,14 @@ particle_path = NodePath("../Player/CPUParticles2D")
 position = Vector2( -0.722626, 4.0244 )
 current = true
 smoothing_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 
 [node name="Fog" type="ColorRect" parent="Player/Camera2D/CanvasLayer"]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 material = ExtResource( 5 )
 anchor_right = 1.0
@@ -86,6 +80,7 @@ __meta__ = {
 }
 
 [node name="Blur" type="TextureRect" parent="Player/Camera2D/CanvasLayer"]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -100,7 +95,32 @@ __meta__ = {
 
 [node name="UI" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 2 )]
 
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 98.862, 120.631 )
+linear_damp = 1.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D"]
+mesh = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 0, 0.157669 )
+shape = SubResource( 2 )
+
+[node name="Enemies" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Inuit1" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 232.157, 46.4315 )
+
+[node name="Inuit2" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 310.595, 210.488 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 28.0758, 122.368 )
