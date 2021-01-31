@@ -13,10 +13,6 @@ func _ready():
 	particles = $DeathParticles
 
 func _physics_process(_delta : float):
-	if Input.is_key_pressed(KEY_E):
-		#killPlayer()
-		victory()
-		return
 	var input := Vector2.ZERO
 	if Input.is_action_pressed("right"):
 		input.x += 1
