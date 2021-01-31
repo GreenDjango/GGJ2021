@@ -26,3 +26,10 @@ func displayDialog(text: String):
 func undisplayDialog():
 	$DialogBox.visible = false
 	Globals.dialog = ""
+
+
+func _on_MuteButton_toggled(button_pressed):
+	if button_pressed:
+		get_tree().call_group("music", "stop")
+	else:
+		get_tree().call_group("music", "play")

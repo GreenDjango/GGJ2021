@@ -121,6 +121,7 @@ autoplay = "blizzard"
 "music",
 ]]
 stream = ExtResource( 9 )
+volume_db = -3.0
 autoplay = true
 [connection signal="body_entered" from="Zones/StartArea" to="." method="_on_StartArea_body_entered"]
 [connection signal="body_exited" from="Zones/StartArea" to="." method="_on_StartArea_body_exited"]
