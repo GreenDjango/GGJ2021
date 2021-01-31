@@ -8,7 +8,7 @@
 [ext_resource path="res://src/nodes/inuit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/nodes/nest.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/scripts/game.gd" type="Script" id=8]
-[ext_resource path="res://assets/sounds/pingu.ogg" type="AudioStream" id=9]
+[ext_resource path="res://src/nodes/orca.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 152, 120 )
@@ -108,7 +108,7 @@ __meta__ = {
 }
 
 [node name="Inuit1" parent="Enemies" instance=ExtResource( 6 )]
-position = Vector2( 504, 192 )
+position = Vector2( 583.045, 190.435 )
 
 [node name="Inuit2" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 168, 320 )
@@ -117,10 +117,8 @@ position = Vector2( 168, 320 )
 root_node = NodePath(".")
 autoplay = "blizzard"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=[
-"music",
-]]
-stream = ExtResource( 9 )
-autoplay = true
+[node name="Orca" parent="." instance=ExtResource( 9 )]
+position = Vector2( 193.187, 67.7161 )
+scale = Vector2( 1.2, 1.2 )
 [connection signal="body_entered" from="Zones/StartArea" to="." method="_on_StartArea_body_entered"]
 [connection signal="body_exited" from="Zones/StartArea" to="." method="_on_StartArea_body_exited"]
