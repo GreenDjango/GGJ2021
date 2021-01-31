@@ -123,11 +123,9 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 18 )
 animation = "idle"
-<<<<<<< HEAD
 frame = 2
 playing = true
-=======
->>>>>>> a8d9d0e24f1875c9fd768f428243e11ed1706a05
+
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 19 )
