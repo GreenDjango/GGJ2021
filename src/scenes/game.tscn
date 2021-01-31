@@ -8,7 +8,7 @@
 [ext_resource path="res://src/nodes/inuit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/nodes/nest.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/scripts/game.gd" type="Script" id=8]
-[ext_resource path="res://assets/sounds/pingu.ogg" type="AudioStream" id=9]
+[ext_resource path="res://src/nodes/orca.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 152, 120 )
