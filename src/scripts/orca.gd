@@ -6,6 +6,8 @@ var talking_zone: Area2D
 var orca_sprite: AnimatedSprite
 var isPlayerEntered = false
 
+var dialog1 := "Hello fils de pute !"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	talking_zone = get_node(talking_zone_path)
@@ -15,10 +17,10 @@ func _ready():
 func _process(delta):
 	if isPlayerEntered && Input.is_key_pressed(KEY_E):
 		orca_sprite.play("orca_talking")
-		launchDialog()
+		launchDialog(dialog1)
 
-func launchDialog():
-	Globals.dialog = "Hello fils de pute !"
+func launchDialog(text: String):
+	Globals.dialog = text
 
 func removeDialog():
 	Globals.dialog = ""
