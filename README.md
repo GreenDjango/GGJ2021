@@ -8,6 +8,11 @@ Poungi is a **GGJ game** for 💻**PC** / 🌐**Web**.
 
 <!--- ![alt text](demo.gif 'Demo bonus') --->
 
+## <img src="https://static.itch.io/favicon.ico"> Play on itch.io
+
+Play at **[kiiks.itch.io](https://kiiks.itch.io/poungi)**
+
+
 ## Install & Setup
 
 1. Download the 💻*binary* from **[releases](https://github.com/GreenDjango/GGJ2021/releases)**
