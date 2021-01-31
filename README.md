@@ -17,6 +17,12 @@ Poungi is a **GGJ game** for 💻**PC** / 🌐**Web**.
 
 ---
 
+#### Project realised by:
+- **[@Killian D.](https://github.com/kiiks)** 🐧
+- **[@Louis C.](https://github.com/Kdaudau)** 🦦
+- **[@Théo C.](https://github.com/GreenDjango)** 🐙
+- **[@Yann M.](https://github.com/Paquity)** 🐤
+
 <img src="assets/splashscreen.png" alt="GGJ icon" width="200" align="center"/>
 
 [1]: https://img.shields.io/badge/release-v0.1.0-blue
