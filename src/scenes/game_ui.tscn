@@ -44,9 +44,11 @@ __meta__ = {
 }
 
 [node name="DialogBox" parent="." instance=ExtResource( 3 )]
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -105.0
-margin_top = -48.0
-margin_right = 106.0
-margin_bottom = 0.0
+margin_left = -105.5
+margin_top = -56.0
+margin_right = 105.5
+margin_bottom = -8.0
