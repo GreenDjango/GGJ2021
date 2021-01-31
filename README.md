@@ -4,7 +4,7 @@
 
 Poungi is a **GGJ game** for 💻**PC** / 🌐**Web**.
 
-[Global game jam 2021](https://globalgamejam.org/) theme is `Lost & Found`.
+[Global game jam 2021](https://globalgamejam.org/2021/games/poungi-6) theme is `Lost & Found`.
 
 <!--- ![alt text](demo.gif 'Demo bonus') --->
 
