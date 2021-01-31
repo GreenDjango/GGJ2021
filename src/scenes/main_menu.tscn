@@ -96,7 +96,7 @@ position = Vector2( 0, -20 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
 animation = "fly"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Title" type="Label" parent="."]

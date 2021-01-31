@@ -67,6 +67,7 @@ height = 16.4588
 
 [node name="Orca" type="StaticBody2D"]
 script = ExtResource( 2 )
+talking_zone_path = NodePath("TalkingZone")
 
 [node name="TalkingZone" type="Area2D" parent="."]
 
