@@ -55,8 +55,6 @@ position = Vector2( 241.081, 137.251 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 90.5929, 145.44 )
-sprite_path = NodePath("../Player/AnimatedSprite")
-particle_path = NodePath("../Player/CPUParticles2D")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -0.722626, 4.0244 )
@@ -98,7 +96,6 @@ __meta__ = {
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2( 98.862, 120.631 )
-gravity_scale = 0.0
 linear_damp = 1.0
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D"]
