@@ -71,6 +71,10 @@ func killPlayer():
 	player_sprite.play("death")
 
 func victory():
+	get_tree().call_group("egg", "hide")
+	var nest_node = get_tree().get_nodes_in_group("nest")[0]
+	if nest_node:
+		position = nest_node.position
 	set_physics_process(false)
 	player_sprite.play("victory")
 

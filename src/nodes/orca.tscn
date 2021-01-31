@@ -4,7 +4,7 @@
 [ext_resource path="res://src/scripts/orca.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 62.2653
+radius = 50.1388
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
@@ -28,7 +28,7 @@ region = Rect2( 320, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 384, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
@@ -36,7 +36,7 @@ region = Rect2( 320, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 384, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
@@ -45,30 +45,29 @@ animations = [ {
 "name": "orca_showing",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ) ],
-"loop": true,
-"name": "orca_talking",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 8 ) ],
+"frames": [ SubResource( 6 ) ],
 "loop": true,
 "name": "orca_out",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ) ],
+"frames": [ SubResource( 7 ) ],
 "loop": true,
 "name": "hole",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "orca_talking",
 "speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=11]
 radius = 19.7109
-height = 10.2433
+height = 16.4588
 
 [node name="Orca" type="StaticBody2D"]
 script = ExtResource( 2 )
 talking_zone_path = NodePath("TalkingZone")
-orca_sprite_path = NodePath("AnimatedSprite")
 
 [node name="TalkingZone" type="Area2D" parent="."]
 
@@ -78,12 +77,9 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.335968, 0 )
 frames = SubResource( 10 )
-animation = "hole"
+animation = "orca_talking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.223976, -0.111988 )
 rotation = 1.56767
 shape = SubResource( 11 )
-[connection signal="body_entered" from="TalkingZone" to="." method="_on_TalkingZone_body_entered"]
-[connection signal="body_exited" from="TalkingZone" to="." method="_on_TalkingZone_body_exited"]
-[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

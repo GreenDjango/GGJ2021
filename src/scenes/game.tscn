@@ -6,7 +6,7 @@
 [ext_resource path="res://src/nodes/water/WaterShadow.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/shaders/snow.tres" type="Material" id=5]
 [ext_resource path="res://src/nodes/inuit.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/nodes/orca.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/nodes/nest.tscn" type="PackedScene" id=7]
 
 [sub_resource type="SphereMesh" id=1]
 radius = 4.688
@@ -53,8 +53,11 @@ tracks/1/keys = {
 [node name="WaterWithShadow" parent="." instance=ExtResource( 4 )]
 position = Vector2( 241.081, 137.251 )
 
+[node name="Nest" parent="." instance=ExtResource( 7 )]
+position = Vector2( 68.7371, 205.614 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 90.5929, 145.44 )
+position = Vector2( 90.7626, 156.895 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -0.722626, 4.0244 )
@@ -94,9 +97,14 @@ __meta__ = {
 
 [node name="UI" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 2 )]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2( 98.862, 120.631 )
+[node name="RigidBody2D" type="RigidBody2D" parent="." groups=[
+"egg",
+]]
+position = Vector2( 82.112, 181.131 )
 linear_damp = 1.0
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D"]
 mesh = SubResource( 1 )
@@ -129,6 +137,3 @@ shape = SubResource( 3 )
 root_node = NodePath(".")
 autoplay = "blizzard"
 anims/blizzard = SubResource( 4 )
-
-[node name="Orca" parent="." instance=ExtResource( 7 )]
-position = Vector2( 240.202, 135.794 )

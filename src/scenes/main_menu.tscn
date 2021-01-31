@@ -90,8 +90,7 @@ __meta__ = {
 }
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Control/Path2D"]
-position = Vector2( 102.263, 200.231 )
-offset = 22.4756
+position = Vector2( 87.8534, 216.581 )
 rotate = false
 
 [node name="Pingu" type="AnimatedSprite" parent="Control/Path2D/PathFollow2D"]
