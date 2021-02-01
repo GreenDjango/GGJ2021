@@ -9,6 +9,7 @@ func _ready():
 
 func restart_game():
 	life = default_life
+	dialog = ""
 	goto_scene("main_menu")
 
 func goto_scene(new_scene_name : String):

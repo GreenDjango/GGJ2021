@@ -65,6 +65,7 @@ func hurt(degat: float):
 func killPlayer():
 	set_physics_process(false)
 	player_sprite.play("death")
+	Globals.dialog = "Defeat..."
 
 func victory():
 	get_tree().call_group("egg", "hide")
@@ -73,6 +74,8 @@ func victory():
 		position = nest_node.position
 	set_physics_process(false)
 	player_sprite.play("victory")
+	Globals.life = 0.0
+	Globals.dialog = "Victory !"
 
 func _on_animation_finished():
 	if player_sprite.animation == "victory":
